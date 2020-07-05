@@ -1,0 +1,19 @@
+Modularity: used to measure the strength of network division into clusters. 
+       definitiom: Modularity is the fraction of the edges that fall within the given groups minus the expected fraction if edges were distributed at random.
+       The value of the modularity for unweighted and undirected graphs lies in the range [-1/2,1] 
+       It is positive if the number of edges within groups exceeds the number expected on the basis of chance. The higher the modularity is, the denser connnection between nodes within modules but sparser connections between nodes betwenn modules.
+       For a given division of the network's vertices into some modules, modularity reflects the concentration of edges within modules compared with random distribution of links between all nodes regardless of modules.
+       Limitaions: unable to detect small community structure.
+Louvain :  greedy optimisation method to optimize the modularity of a partition of network.   
+       step 1: look for small communities by optimising modularity locally
+       step 2: aggerate nodes belonging to the same community and build a new network whose nodes are communties
+       step 3: repeat the above two steps iteratively until the maximum modularity is achieved and a hierachy of community is produced.
+       R:  cluster_louvain(graph, weights = NULL)
+Walltrap:
+       It is based on the fact that a random walker tends to be trapped in dense part of a network corresponding to communities.
+       R: walktrap.community(graph, weights = E(graph)$weight, steps = 4, merges =
+          TRUE, modularity = FALSE, labels = TRUE)
+
+
+
+
